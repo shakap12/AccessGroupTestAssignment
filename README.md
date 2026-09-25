@@ -27,6 +27,11 @@ Search(H1, 365, SGL)
 (20240901-20240902, 2), (20240902-20240903, 1), (20240904-20240906, 1), (20240906-20250901, 2)
 ```
 
+The `Search` output above assumes the current date is 20240901, as the example
+in the brief does. Search always looks ahead from today, so with the sample
+bookings now in the past it will report the full room count instead. The dated
+examples from the brief are covered in `SearchTest`, which passes the date in.
+
 `Availability` takes one date or a range and prints a single integer, which can
 be negative where the hotel is over capacity. `Search` looks a number of nights
 ahead from today and prints the stretches with a room free, or an empty line if
